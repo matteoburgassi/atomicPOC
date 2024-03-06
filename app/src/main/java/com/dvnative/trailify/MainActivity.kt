@@ -16,7 +16,7 @@ import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.navigation.compose.rememberNavController
 import com.dvnative.trailify.navigation.NavigationComponent
 import com.dvnative.trailify.ui.theme.AppTheme
-import com.dvnative.trailify.ui.theme.extraColors
+import com.dvnative.trailify.ui.theme.extraValues
 import com.dvnative.trailify.viewmodel.MainViewModel
 
 class MainActivity : ComponentActivity() {
@@ -36,7 +36,7 @@ class MainActivity : ComponentActivity() {
             AppTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(
-                    modifier = Modifier.background(MaterialTheme.extraColors.backgroundGradient),
+                    modifier = Modifier.background(MaterialTheme.extraValues.backgroundGradient),
                     color = Color.Transparent
                 ) {
                     NavigationComponent(navController, viewModel, mainScreenUIState)

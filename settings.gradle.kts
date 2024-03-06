@@ -14,5 +14,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "PlayUp"
+rootProject.name = "Trailify"
 include(":app")

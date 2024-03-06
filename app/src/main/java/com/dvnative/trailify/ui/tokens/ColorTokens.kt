@@ -35,6 +35,7 @@ val Red = Color(0xFFD80000)
 //TRAILIFY THEME
 
 val DarkBlue = Color(0xFF10213F)
+val UltraDarkBlue = Color(0xFF0E1E3B)
 val BluePrimary = Color(0xFF0E1E3B)
 val BlueVariant = Color(0xFF1D3B69)
 val BlueTextVariant = Color(0xFF345994)

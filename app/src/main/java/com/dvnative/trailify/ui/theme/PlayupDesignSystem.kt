@@ -3,19 +3,24 @@ package com.dvnative.trailify.ui.theme
 import androidx.compose.material3.ColorScheme
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.unit.dp
 import com.dvnative.trailify.ui.tokens.Black30
+import com.dvnative.trailify.ui.tokens.Black60
 import com.dvnative.trailify.ui.tokens.BlueNight
 import com.dvnative.trailify.ui.tokens.Gray100
 import com.dvnative.trailify.ui.tokens.Gray400
 import com.dvnative.trailify.ui.tokens.Gray700
 import com.dvnative.trailify.ui.tokens.Red
+import com.dvnative.trailify.ui.tokens.SizeTokens
 import com.dvnative.trailify.ui.tokens.Violet
 import com.dvnative.trailify.ui.tokens.VioletBright
 import com.dvnative.trailify.ui.tokens.VioletLight
 import com.dvnative.trailify.ui.tokens.VioletNight
 import com.dvnative.trailify.ui.tokens.White06
+import com.dvnative.trailify.ui.tokens.White100
 
-val playupColorScheme = DesignSystemColors(
+val PlayupDesignSystem = DesignSystem(
+    splashVideo = true,
     material = ColorScheme(
         primary = VioletNight,
         onPrimary = Gray100, //primaryActiveButton text color (Color used for text and icons displayed on top of the primary color.)
@@ -64,5 +69,16 @@ val playupColorScheme = DesignSystemColors(
             0.75f to BlueNight,
             1.0f to BlueNight
         )
-    )
+    ),
+    sizes = SizeTokens(
+        labelPadding = 14.dp,
+        editTextOutlineBorder = 1.dp,
+        buttonOutlineBorder = 1.dp,
+        textFieldBorderRadius = 5.dp,
+        buttonsBorderRadius = 5.dp,
+        containerHorizontalPadding = 10.dp,
+        titleVerticalPadding = 20.dp
+    ),
+    splashPrimary = Violet,
+    splashContainer = White100
 )

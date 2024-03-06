@@ -37,8 +37,8 @@ val TrailifyTypography = Typography(
     bodyMedium = TextStyle(
         fontFamily = trailifyFontFamily,
         fontWeight = FontWeight.Normal,
-        fontSize = 16.sp,
-        lineHeight = 18.sp,
+        fontSize = 18.sp,
+        lineHeight = 20.sp,
         letterSpacing = 0.5.sp
     ),
     //H1
@@ -57,4 +57,12 @@ val TrailifyTypography = Typography(
         lineHeight = 14.sp,
         letterSpacing = 0.sp
     ),
+    //H2
+    headlineLarge = TextStyle(
+        fontFamily = trailifyFontFamily,
+        fontWeight = FontWeight.Normal,
+        fontSize = 16.sp,
+        lineHeight = 18.sp,
+        letterSpacing = 0.5.sp
+    )
 )

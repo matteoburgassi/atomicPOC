@@ -16,22 +16,17 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.dvnative.trailify.ui.components.InputField
 import com.dvnative.trailify.ui.components.PasswordField
 import com.dvnative.trailify.ui.components.PrimaryActiveButton
-import com.dvnative.trailify.ui.components.PrimaryDefaultButton
-import com.dvnative.trailify.ui.components.PrimaryOutlineButton
 import com.dvnative.trailify.ui.components.Title
-import com.dvnative.trailify.ui.components.backgroundGradient
 import com.dvnative.trailify.viewmodel.LoginViewModelInterface
 import com.dvnative.trailify.viewmodel.mocks.LoginViewModelMock
 import com.dvnative.trailify.ui.theme.AppTheme
-import com.dvnative.trailify.ui.theme.extraColors
-import com.dvnative.trailify.ui.tokens.sizes
-
+import com.dvnative.trailify.ui.theme.extraValues
 @Composable
 fun Login(viewModel: LoginViewModelInterface) {
     val focusManager = LocalFocusManager.current
     val context = LocalContext.current
     AppTheme {
-        Column(Modifier.padding(horizontal = MaterialTheme.shapes.sizes.screenHorizontalPadding)) {
+        Column(Modifier.padding(horizontal = MaterialTheme.extraValues.sizes.containerHorizontalPadding)) {
             Title(text = "Sign in")
 
             InputField(
@@ -76,7 +71,7 @@ fun LoginPreview() {
         passwordMock = "",
         isEnabledSubmitButtonMock = false
     )
-    Surface (Modifier.background(MaterialTheme.extraColors.backgroundGradient),
+    Surface (Modifier.background(MaterialTheme.extraValues.backgroundGradient),
         color = Color.Transparent) {
         Login(mockViewModel)
     }

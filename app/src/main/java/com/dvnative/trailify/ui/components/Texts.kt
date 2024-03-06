@@ -32,19 +32,20 @@ import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import com.dvnative.trailify.R
-import com.dvnative.trailify.ui.tokens.sizes
 import com.dvnative.trailify.ui.theme.AppTheme
+import com.dvnative.trailify.ui.theme.extraValues
 
 
 @Composable
 fun Title(modifier: Modifier = Modifier, text: String) {
     Text(
         text = text,
-        modifier = modifier.padding(vertical = MaterialTheme.shapes.sizes.titleVerticalPadding),
+        modifier = modifier.padding(vertical = MaterialTheme.extraValues.sizes.titleVerticalPadding),
         style = MaterialTheme.typography.titleLarge,
         color = MaterialTheme.colorScheme.onPrimary
     )
 }
+
 @Composable
 fun Body(modifier: Modifier = Modifier, text: String, textAlign: TextAlign? = null) {
     Text(
@@ -53,6 +54,28 @@ fun Body(modifier: Modifier = Modifier, text: String, textAlign: TextAlign? = nu
         modifier = modifier,
         style = MaterialTheme.typography.bodyMedium,
         color = MaterialTheme.colorScheme.onPrimary
+    )
+}
+
+@Composable
+fun SecondaryBody(modifier: Modifier = Modifier, text: String, textAlign: TextAlign? = null) {
+    Text(
+        textAlign = textAlign,
+        text = text,
+        modifier = modifier,
+        style = MaterialTheme.typography.bodyMedium,
+        color = MaterialTheme.colorScheme.secondary
+    )
+}
+
+@Composable
+fun Caption(modifier: Modifier = Modifier, text: String, textAlign: TextAlign? = null) {
+    Text(
+        textAlign = textAlign,
+        text = text,
+        modifier = modifier,
+        style = MaterialTheme.typography.bodySmall,
+        color = MaterialTheme.colorScheme.secondary
     )
 }
 
@@ -71,7 +94,7 @@ fun InputField(
         value = value,
         modifier = modifier,
         onValueChange = onValueChange,
-        shape = RoundedCornerShape(MaterialTheme.shapes.sizes.textFieldBorderRadius),
+        shape = RoundedCornerShape(MaterialTheme.extraValues.sizes.textFieldBorderRadius),
         label =  label,
         supportingText = { if (isError) {Text(errorLabel?: "")} },
         isError = isError,
@@ -135,11 +158,11 @@ fun PasswordField(
         value = value,
         modifier = modifier,
         onValueChange = onValueChange,
-        shape = RoundedCornerShape(MaterialTheme.shapes.sizes.textFieldBorderRadius),
+        shape = RoundedCornerShape(MaterialTheme.extraValues.sizes.textFieldBorderRadius),
         label =  label,
         visualTransformation = if (passwordVisible.value) VisualTransformation.None else PasswordVisualTransformation(),
         supportingText = { if (isError) {
-            Text(modifier=Modifier.padding(vertical = MaterialTheme.shapes.sizes.labelPadding), text = errorLabel?:"")
+            Text(modifier=Modifier.padding(vertical = MaterialTheme.extraValues.sizes.labelPadding), text = errorLabel?:"")
         }},
         isError = isError,
         colors = OutlinedTextFieldDefaults.colors(

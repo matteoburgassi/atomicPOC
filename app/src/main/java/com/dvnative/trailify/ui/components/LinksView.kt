@@ -16,10 +16,9 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.modifier.modifierLocalConsumer
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.dvnative.trailify.ui.tokens.sizes
+import com.dvnative.trailify.ui.theme.extraValues
 
 @Composable
 fun LinksView(openWebview: MutableState<Boolean>) {
@@ -31,7 +30,7 @@ fun LinksView(openWebview: MutableState<Boolean>) {
         Row(
             Modifier
                 .fillMaxWidth()
-                .padding(horizontal = MaterialTheme.shapes.sizes.screenHorizontalPadding),
+                .padding(horizontal = MaterialTheme.extraValues.sizes.containerHorizontalPadding),
             horizontalArrangement = Arrangement.Center,
             verticalAlignment = Alignment.CenterVertically
         ) {
@@ -39,7 +38,7 @@ fun LinksView(openWebview: MutableState<Boolean>) {
                 onClick = {
                     openWebview.value = true
                 }, text = "Forgot Password?",
-                modifier = Modifier.padding(MaterialTheme.shapes.sizes.labelPadding),
+                modifier = Modifier.padding(MaterialTheme.extraValues.sizes.labelPadding),
                 enabled = true
             )
         }
@@ -47,13 +46,13 @@ fun LinksView(openWebview: MutableState<Boolean>) {
             modifier = Modifier
                 .height(1.dp)
                 .fillMaxWidth()
-                .padding(horizontal = MaterialTheme.shapes.sizes.screenHorizontalPadding)
+                .padding(horizontal = MaterialTheme.extraValues.sizes.containerHorizontalPadding)
                 .background(MaterialTheme.colorScheme.outline)
         )
         Row(
             Modifier
                 .fillMaxWidth()
-                .padding(horizontal = MaterialTheme.shapes.sizes.screenHorizontalPadding),
+                .padding(horizontal = MaterialTheme.extraValues.sizes.containerHorizontalPadding),
             horizontalArrangement = Arrangement.Center,
             verticalAlignment = Alignment.CenterVertically
         ) {
@@ -78,7 +77,7 @@ fun LinksView(openWebview: MutableState<Boolean>) {
                 onClick = {
                     openWebview.value = true
                 }, text = "Privacy & Policy",
-                modifier = Modifier.padding(MaterialTheme.shapes.sizes.labelPadding),
+                modifier = Modifier.padding(MaterialTheme.extraValues.sizes.labelPadding),
                 enabled = true
             )
         }

@@ -14,7 +14,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.dvnative.trailify.R
 import com.dvnative.trailify.ui.theme.AppTheme
-import com.dvnative.trailify.ui.theme.extraColors
+import com.dvnative.trailify.ui.theme.extraValues
 
 
 @Composable
@@ -22,8 +22,8 @@ fun PrimaryActiveButton(onClick: ()->Unit, text: String, enabled: Boolean, trail
     val colors = ButtonDefaults.buttonColors(
         containerColor = MaterialTheme.colorScheme.primaryContainer,
         contentColor = MaterialTheme.colorScheme.onPrimary,
-        disabledContainerColor = MaterialTheme.extraColors.disabledContainer,
-        disabledContentColor = MaterialTheme.extraColors.onDisabled
+        disabledContainerColor = MaterialTheme.extraValues.disabledContainer,
+        disabledContentColor = MaterialTheme.extraValues.onDisabled
     )
     PrimaryButton(onClick = onClick, text = text, enabled = enabled, colors = colors, trailingIcon = trailingIcon, leadingIcon = leadingIcon)
 }
@@ -33,8 +33,8 @@ fun PrimaryDefaultButton(onClick: ()->Unit, text: String, enabled: Boolean, trai
     val colors = ButtonDefaults.buttonColors(
         containerColor = MaterialTheme.colorScheme.secondaryContainer,
         contentColor = MaterialTheme.colorScheme.onSecondary,
-        disabledContainerColor = MaterialTheme.extraColors.disabledContainer,
-        disabledContentColor = MaterialTheme.extraColors.onDisabled
+        disabledContainerColor = MaterialTheme.extraValues.disabledContainer,
+        disabledContentColor = MaterialTheme.extraValues.onDisabled
     )
     PrimaryButton(onClick = onClick, text = text, enabled = enabled, colors = colors, trailingIcon = trailingIcon, leadingIcon = leadingIcon)
 }
@@ -43,10 +43,20 @@ fun PrimaryOutlineButton(onClick: ()->Unit, text: String, enabled: Boolean = fal
     val colors = ButtonDefaults.outlinedButtonColors(
         containerColor = MaterialTheme.colorScheme.tertiaryContainer,
         contentColor = MaterialTheme.colorScheme.onTertiary,
-        disabledContainerColor = MaterialTheme.extraColors.disabledContainer,
-        disabledContentColor = MaterialTheme.extraColors.onDisabled
+        disabledContainerColor = MaterialTheme.extraValues.disabledContainer,
+        disabledContentColor = MaterialTheme.extraValues.onDisabled
     )
     OutlinedPrimaryButton(onClick = onClick, text = text, enabled = enabled, colors = colors, trailingIcon = trailingIcon, leadingIcon = leadingIcon)
+}
+@Composable
+fun PrimaryOutlineActiveButton(onClick: ()->Unit, text: String, enabled: Boolean = false, trailingIcon: Int? = null, leadingIcon: Int? = null){
+    val colors = ButtonDefaults.outlinedButtonColors(
+        containerColor = MaterialTheme.colorScheme.tertiaryContainer,
+        contentColor = MaterialTheme.colorScheme.primaryContainer,
+        disabledContainerColor = MaterialTheme.extraValues.disabledContainer,
+        disabledContentColor = MaterialTheme.extraValues.onDisabled
+    )
+    OutlinedPrimaryButton(onClick = onClick, text = text, enabled = enabled, colors = colors, trailingIcon = trailingIcon, leadingIcon = leadingIcon, borderColor = MaterialTheme.colorScheme.primaryContainer)
 }
 
 @Composable
@@ -61,7 +71,7 @@ fun PrimaryActiveLinkButton(onClick: () -> Unit, text: String, modifier: Modifie
 }
 @Composable
 fun SecondaryLinkButton(onClick: () -> Unit, text: String, modifier: Modifier = Modifier, enabled: Boolean) {
-    val color = MaterialTheme.extraColors.onDisabled
+    val color = MaterialTheme.extraValues.onDisabled
     PrimaryLink(onclick = onClick, text = text, modifier = modifier, color = color, textStyle = MaterialTheme.typography.bodyMedium)
 }
 
@@ -72,10 +82,12 @@ fun ButtonPreview() {
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .background(MaterialTheme.extraColors.backgroundGradient),
+                .background(MaterialTheme.extraValues.backgroundGradient),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             PrimaryActiveButton(onClick = {}, text = "Disabled Button", enabled = false)
+            Spacer(Modifier.height(10.dp))
+            PrimaryOutlineActiveButton(onClick = {}, text = "PrimaryOutlineActive Button", enabled = false)
             Spacer(Modifier.height(10.dp))
             PrimaryActiveButton(onClick = {}, text = "PrimaryActive Button", enabled = true, trailingIcon = R.drawable.logo)
             Spacer(Modifier.height(10.dp))

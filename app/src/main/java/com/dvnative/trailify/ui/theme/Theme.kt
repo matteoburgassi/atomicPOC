@@ -2,7 +2,6 @@ package com.dvnative.trailify.ui.theme
 
 import android.app.Activity
 import androidx.compose.foundation.isSystemInDarkTheme
-import androidx.compose.material3.ColorScheme
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Shapes
 import androidx.compose.material3.Typography
@@ -14,9 +13,10 @@ import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalView
+import com.dvnative.trailify.ui.components.PlayupTypography
 import com.dvnative.trailify.ui.components.TrailifyTypography
 
-private val LocalColorScheme = staticCompositionLocalOf { TrailifyColorScheme }
+private val LocalColorScheme = staticCompositionLocalOf { TrailifyDesignSystem }
 
 @Composable
 fun AppTheme(
@@ -26,10 +26,8 @@ fun AppTheme(
     content: @Composable () -> Unit,
 ) {
 
-
-    val colorScheme = TrailifyColorScheme
-    val shapes: Shapes = playupShapes
-    val typogrphy: Typography = TrailifyTypography
+    val colorScheme = PlayupDesignSystem
+    val typogrphy: Typography = PlayupTypography
 
     val view = LocalView.current
     if (!view.isInEditMode) {
@@ -41,14 +39,13 @@ fun AppTheme(
     CompositionLocalProvider(LocalColorScheme provides colorScheme) {
         MaterialTheme(
             colorScheme = colorScheme.material,
-            shapes = shapes,
             typography = typogrphy,
             content = content
         )
     }
 }
 
-val MaterialTheme.extraColors: DesignSystemColors
+val MaterialTheme.extraValues: DesignSystem
     @Composable
     @ReadOnlyComposable
     get() = LocalColorScheme.current

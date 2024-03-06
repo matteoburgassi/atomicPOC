@@ -10,13 +10,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import com.dvnative.trailify.ui.components.Title
 import com.dvnative.trailify.ui.components.backgroundGradient
-import com.dvnative.trailify.ui.theme.extraColors
+import com.dvnative.trailify.ui.theme.extraValues
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun OrganismsTopAppBar() {
         TopAppBar(
-            modifier = Modifier.background(MaterialTheme.extraColors.backgroundGradient),
+            modifier = Modifier.background(MaterialTheme.extraValues.backgroundGradient),
             title = { Title(text = "SemicolonSpace") },
             colors = TopAppBarDefaults.topAppBarColors(
                 titleContentColor = MaterialTheme.colorScheme.onPrimary,

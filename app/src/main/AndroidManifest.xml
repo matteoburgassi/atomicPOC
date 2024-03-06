@@ -8,11 +8,11 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@drawable/icon"
+        android:icon="@drawable/trailify_icon_logo"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/icon"
+        android:roundIcon="@drawable/trailify_icon_logo"
         android:supportsRtl="true"
-        android:theme="@style/Theme.PlayUp"
+        android:theme="@style/Theme.AppTheme"
         tools:targetApi="31">
         <activity
             android:configChanges="keyboardHidden"

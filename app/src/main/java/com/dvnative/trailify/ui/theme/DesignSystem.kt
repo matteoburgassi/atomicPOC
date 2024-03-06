@@ -1,12 +1,9 @@
 package com.dvnative.trailify.ui.theme
 
-import android.provider.CalendarContract
 import androidx.compose.material3.ColorScheme
-import androidx.compose.material3.lightColorScheme
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
-import com.dvnative.trailify.ui.tokens.Gray400
-import com.dvnative.trailify.ui.tokens.White06
+import com.dvnative.trailify.ui.tokens.SizeTokens
 
 /*
 *
@@ -56,12 +53,16 @@ outlineVariant - Utility color used for boundaries for decorative elements when 
 *
 */
 
-data class DesignSystemColors(
+data class DesignSystem(
     val material: ColorScheme,
     val disabledContainer: Color,
     val onDisabled: Color,
+    val splashContainer: Color,
+    val splashPrimary: Color,
     val backgroundGradient: Brush,
-    val backgroundGradientVariant: Brush
+    val backgroundGradientVariant: Brush,
+    val splashVideo: Boolean,
+    val sizes: SizeTokens
 ) {
     val primary: Color get() = material.primary
     val onPrimary: Color get() = material.onPrimary
@@ -94,29 +95,4 @@ data class DesignSystemColors(
     val scrim: Color get() = material.scrim
 
 }
-
-
-
-
-
-
-//    var extraColors: ExtraColors = ExtraColors()
-//        class ExtraColors {
-//            var
-//            var onDisabled = Gray400
-//            var backgroundGradient = Brush.horizontalGradient(
-//                colorStops = arrayOf(
-//                    0.0f to Color.Black,  //MaterialTheme.colorScheme.background
-//                    0.5f to Color.DarkGray,
-//                    1.0f to Color.Black   //MaterialTheme.colorScheme.background
-//                )
-//            )
-//            var backgroundGradientVariant = Brush.horizontalGradient(
-//                colorStops = arrayOf(
-//                    0.0f to Color.Black,  //MaterialTheme.colorScheme.background
-//                    0.5f to Color.DarkGray,
-//                    1.0f to Color.Black   //MaterialTheme.colorScheme.background
-//                )
-//            )
-//        }
 

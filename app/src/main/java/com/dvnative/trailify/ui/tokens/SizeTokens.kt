@@ -1,23 +1,18 @@
 package com.dvnative.trailify.ui.tokens
 
-import androidx.compose.material3.MaterialTheme
+import androidx.annotation.DimenRes
+import androidx.annotation.Dimension
 import androidx.compose.material3.Shapes
-import androidx.compose.ui.graphics.Brush
-import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 
-val Shapes.sizes: SizeTokens
-    get() {
-        return SizeTokens()
-    }
-
-class SizeTokens {
-    var labelPadding = 14.dp
-    var editTextOutlineBorder = 1.dp
-    var buttonOutlineBorder = 1.dp
-    var textFieldBorderRadius = 5.dp
-    var buttonsBorderRadius = 5.dp
-    var screenHorizontalPadding = 10.dp
-    var titleVerticalPadding = 20.dp
-}
+data class SizeTokens(
+    val labelPadding: Dp = 14.dp,
+    val editTextOutlineBorder: Dp = 1.dp,
+    val buttonOutlineBorder: Dp = 1.dp,
+    val textFieldBorderRadius: Dp = 5.dp,
+    val buttonsBorderRadius: Dp = 5.dp,
+    val containerHorizontalPadding: Dp = 10.dp,
+    val titleVerticalPadding: Dp = 20.dp
+)
 

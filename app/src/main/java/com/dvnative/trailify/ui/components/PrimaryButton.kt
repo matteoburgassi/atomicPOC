@@ -16,7 +16,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-import com.dvnative.trailify.ui.tokens.sizes
+import com.dvnative.trailify.ui.theme.extraValues
 
 @Composable
 internal fun PrimaryButton(onClick: ()->Unit, text: String, enabled: Boolean, trailingIcon: Int? = null, leadingIcon: Int? = null, colors: ButtonColors) {
@@ -24,7 +24,7 @@ internal fun PrimaryButton(onClick: ()->Unit, text: String, enabled: Boolean, tr
         onClick = onClick,
         enabled = enabled,
         colors = colors,
-        shape = RoundedCornerShape(MaterialTheme.shapes.sizes.buttonsBorderRadius),
+        shape = RoundedCornerShape(MaterialTheme.extraValues.sizes.buttonsBorderRadius),
         modifier = Modifier
             .testTag("login-confirm")
             .fillMaxWidth()

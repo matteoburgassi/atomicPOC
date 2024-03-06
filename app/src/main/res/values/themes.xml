@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="Theme.PlayUp" parent="android:Theme.Material.Light.NoActionBar" >
+    <style name="Theme.AppTheme" parent="android:Theme.Material.Light.NoActionBar" >
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:navigationBarColor">@android:color/transparent</item>
         <item name="android:windowBackground">#1D1D2E</item>
@@ -12,9 +12,9 @@
 
         <!--  -->
         <item name="windowSplashScreenBackground">#1d0c22</item>
-        <item name="windowSplashScreenAnimatedIcon" >@drawable/launch</item>
+        <item name="windowSplashScreenAnimatedIcon" >@drawable/trailify_icon_logo</item>
         <item name="windowSplashScreenAnimationDuration">1000</item>
-        <item name="postSplashScreenTheme">@style/Theme.PlayUp</item>
+        <item name="postSplashScreenTheme">@style/Theme.AppTheme</item>
         <item name="android:windowBackground">#1D1D2E</item>
     </style>
 

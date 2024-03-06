@@ -14,28 +14,28 @@ import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-import com.dvnative.trailify.ui.tokens.sizes
-import com.dvnative.trailify.ui.theme.extraColors
+import com.dvnative.trailify.ui.theme.extraValues
 
 @Composable
-internal fun OutlinedPrimaryButton(onClick: ()->Unit, text: String, enabled: Boolean, trailingIcon: Int? = null, leadingIcon: Int? = null, colors: ButtonColors) {
+internal fun OutlinedPrimaryButton(onClick: ()->Unit, text: String, enabled: Boolean, trailingIcon: Int? = null, leadingIcon: Int? = null, colors: ButtonColors, borderColor: Color = MaterialTheme.colorScheme.outline) {
     OutlinedButton(
         onClick = onClick,
         enabled = enabled,
         border = BorderStroke(
-            color = MaterialTheme.colorScheme.outline,
-            width = MaterialTheme.shapes.sizes.buttonOutlineBorder,
+            color = borderColor,
+            width = MaterialTheme.extraValues.sizes.buttonOutlineBorder,
         ),
         colors = ButtonDefaults.outlinedButtonColors(
             containerColor = MaterialTheme.colorScheme.tertiaryContainer,
             contentColor = MaterialTheme.colorScheme.onTertiary,
-            disabledContainerColor = MaterialTheme.extraColors.disabledContainer,
-            disabledContentColor = MaterialTheme.extraColors.onDisabled
+            disabledContainerColor = MaterialTheme.extraValues.disabledContainer,
+            disabledContentColor = MaterialTheme.extraValues.onDisabled
         ),
-        shape = RoundedCornerShape(MaterialTheme.shapes.sizes.buttonsBorderRadius),
+        shape = RoundedCornerShape(MaterialTheme.extraValues.sizes.buttonsBorderRadius),
         modifier = Modifier
             .testTag("login-confirm")
             .fillMaxWidth()
@@ -49,7 +49,7 @@ internal fun OutlinedPrimaryButton(onClick: ()->Unit, text: String, enabled: Boo
             )
             Spacer(modifier = Modifier.size(ButtonDefaults.IconSpacing))
         }
-        Text(text = text)
+        Text(text = text, color = MaterialTheme.colorScheme.primaryContainer)
         trailingIcon?.let {
             Spacer(modifier = Modifier.size(ButtonDefaults.IconSpacing))
             Icon(
