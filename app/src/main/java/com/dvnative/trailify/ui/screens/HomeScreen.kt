@@ -57,9 +57,9 @@ fun HomeScreen(viewModel: MainViewModel?) {
                 Card(modifier = Modifier
                     .fillMaxWidth(),
                     colors = CardDefaults.cardColors(
-                    containerColor = MaterialTheme.colorScheme.onSurface,
+                    containerColor = MaterialTheme.colorScheme.onBackground,
                 ),elevation = CardDefaults.cardElevation(
-                    defaultElevation = 20.dp
+                    defaultElevation = 10.dp
                 )){
                     Column {
                         MiniPlayerView()

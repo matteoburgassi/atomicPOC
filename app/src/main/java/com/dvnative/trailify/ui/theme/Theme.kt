@@ -12,9 +12,15 @@ import androidx.compose.runtime.SideEffect
 import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
+import androidx.compose.ui.res.colorResource
+import com.dvnative.trailify.storage.PLAYUP_THEME
+import com.dvnative.trailify.storage.Prefs
+import com.dvnative.trailify.storage.TRAILIFY_THEME
 import com.dvnative.trailify.ui.components.PlayupTypography
 import com.dvnative.trailify.ui.components.TrailifyTypography
+import java.lang.NullPointerException
 
 private val LocalColorScheme = staticCompositionLocalOf { TrailifyDesignSystem }
 
@@ -25,9 +31,22 @@ fun AppTheme(
     dynamicColor: Boolean = true,
     content: @Composable () -> Unit,
 ) {
+    val colorScheme: DesignSystem
+    val typography: Typography
 
-    val colorScheme = PlayupDesignSystem
-    val typogrphy: Typography = PlayupTypography
+    when(Prefs.getTheme(LocalContext.current)) {
+        TRAILIFY_THEME -> {
+            colorScheme = TrailifyDesignSystem
+            typography = TrailifyTypography
+        }
+        PLAYUP_THEME -> {
+            colorScheme = PlayupDesignSystem
+            typography = PlayupTypography
+        }
+        else -> {
+            throw NullPointerException("theme cannot be null")
+        }
+    }
 
     val view = LocalView.current
     if (!view.isInEditMode) {
@@ -39,7 +58,7 @@ fun AppTheme(
     CompositionLocalProvider(LocalColorScheme provides colorScheme) {
         MaterialTheme(
             colorScheme = colorScheme.material,
-            typography = typogrphy,
+            typography = typography,
             content = content
         )
     }

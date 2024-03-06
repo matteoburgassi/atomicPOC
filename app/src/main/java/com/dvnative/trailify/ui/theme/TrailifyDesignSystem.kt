@@ -6,6 +6,7 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.dvnative.trailify.ui.tokens.Black30
+import com.dvnative.trailify.ui.tokens.Black60
 import com.dvnative.trailify.ui.tokens.BluePrimary
 import com.dvnative.trailify.ui.tokens.Gray100
 import com.dvnative.trailify.ui.tokens.BlueFocus
